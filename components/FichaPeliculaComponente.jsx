@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import CajaComentarios from "./CajaComentarios";
+import { DEFAULT_OVERVIEW } from "@/lib/tmdbConfig";
 
 export default function FichaPeliculaComponente({ peli, trailer }) {
   const backdropUrl = peli.backdrop_path
@@ -44,7 +45,7 @@ export default function FichaPeliculaComponente({ peli, trailer }) {
             href="/"
             className="flex items-center gap-2 bg-[#16151C]/80 hover:bg-[#2A2833] backdrop-blur-sm text-[#F5F5F5] text-sm font-medium px-4 py-2 rounded-full transition-all duration-200 border border-[#2A2833] outline-none focus-visible:ring-2 focus-visible:ring-[#7C5CFC]"
           >
-            ← Volver
+            ←
           </Link>
         </div>
       </div>
@@ -116,16 +117,14 @@ export default function FichaPeliculaComponente({ peli, trailer }) {
             )}
 
             {/* Sinopsis */}
-            {peli.overview && (
-              <div className="mt-2">
-                <h2 className="text-xs font-mono uppercase tracking-[0.2em] text-[#5C5670] mb-2">
-                  Sinopsis
-                </h2>
-                <p className="text-[#A09BB5] text-sm leading-relaxed max-w-xl">
-                  {peli.overview}
-                </p>
-              </div>
-            )}
+            <div className="mt-2">
+              <h2 className="text-xs font-mono uppercase tracking-[0.2em] text-[#5C5670] mb-2">
+                Sinopsis
+              </h2>
+              <p className="text-[#A09BB5] text-sm leading-relaxed max-w-xl">
+                {peli.overview || DEFAULT_OVERVIEW}
+              </p>
+            </div>
           </div>
         </div>
 

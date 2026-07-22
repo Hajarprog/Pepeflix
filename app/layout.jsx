@@ -10,8 +10,8 @@ const sora = Sora({
 });
 
 export const metadata = {
-  title: "PepeFlix | Películas populares",
-  description: "Streaming de películas",
+  title: "PepeFlix",
+  description: "Descubre películas, consulta información detallada, guarda tus favoritas y accede a sus tráilers.",
 };
 
 export default function RootLayout({ children }) {
